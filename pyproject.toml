@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "cloudstorage"
+version = "0.1.0"
+description = ""
+authors = ["Sergey Udachin"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.13"
+django = "5.1.2"
+asgiref = "3.8.1"
+django-probes = "1.7.0"
+mysqlclient = "2.2.5"
+python-decouple = "3.8"
+sqlparse = "0.5.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
