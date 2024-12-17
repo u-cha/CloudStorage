@@ -2,6 +2,7 @@ services:
   mysql:
     image: mysql:8.0
     restart: always
+    hostname: mysql
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: myapp
