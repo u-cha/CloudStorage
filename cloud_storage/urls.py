@@ -24,6 +24,6 @@ urlpatterns = [
     path('', site_views.home, name='home'),
     path('admin/', admin.site.urls),
     path('register/', account_views.register, name='register'),
-    path('login', account_views.user_login, name='login'),
+    path('logout/', account_views.user_logout, name='custom_logout'),
     path('accounts/', include('django.contrib.auth.urls')),  # Includes login/logout views
 ]

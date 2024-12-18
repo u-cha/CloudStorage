@@ -1,4 +1,5 @@
-from django.contrib.auth import login
+from django.contrib import messages
+from django.contrib.auth import login, logout
 from django.shortcuts import redirect, render
 
 from .forms import LoginForm, RegistrationForm
@@ -27,3 +28,12 @@ def user_login(request):
     else:
         form = LoginForm()
     return render(request, 'registration/login.html', {'form': form})
+
+def user_logout(request):
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            logout(request)
+            messages.success(request, "You logged out from CloudStorage. Have a nice day!")
+        return redirect('home')
+    if request.method == 'GET':
+        return render(request, 'registration/logout.html', {})
